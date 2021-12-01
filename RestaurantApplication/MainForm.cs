@@ -1,4 +1,5 @@
 ﻿using RestaurantApplicationClassLibrary;
+using RestaurantApplicationClassLibrary.Product;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,13 @@ namespace RestaurantApplication
         {
             OrdersForm order_form = new OrdersForm();
             order_form.ShowDialog();
+            Refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ProdutsForm form = new ProdutsForm(new ProductRepository());
+            form.ShowDialog();
             Refresh();
         }
     }
