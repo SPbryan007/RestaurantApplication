@@ -37,8 +37,11 @@ namespace RestaurantApplication
             this.label1 = new System.Windows.Forms.Label();
             this.btn_register = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dg_show_customers = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_show_customers)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -112,13 +115,24 @@ namespace RestaurantApplication
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dg_show_customers);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(768, 408);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "show customers";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dg_show_customers
+            // 
+            this.dg_show_customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_show_customers.Location = new System.Drawing.Point(6, 15);
+            this.dg_show_customers.Name = "dg_show_customers";
+            this.dg_show_customers.RowTemplate.Height = 25;
+            this.dg_show_customers.Size = new System.Drawing.Size(312, 124);
+            this.dg_show_customers.TabIndex = 0;
+            this.dg_show_customers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomersForm
             // 
@@ -131,6 +145,8 @@ namespace RestaurantApplication
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_show_customers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,5 +161,6 @@ namespace RestaurantApplication
         private System.Windows.Forms.TextBox txt_document;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dg_show_customers;
     }
 }
