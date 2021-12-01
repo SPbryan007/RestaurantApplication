@@ -20,6 +20,7 @@ namespace RestaurantApplication
         {
             InitializeComponent();
             this._repository = repository;
+            dg_show_customers.DataSource = this._repository.GetAll();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,9 +45,9 @@ namespace RestaurantApplication
             }
             else
             {
-                Console.WriteLine(customer.Name);
                 this._repository.Save(customer);
                 this.ResetFields();
+                Refresh();
             }
 
 
@@ -56,6 +57,11 @@ namespace RestaurantApplication
         {
             txt_document.Clear();
             txt_name.Clear();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

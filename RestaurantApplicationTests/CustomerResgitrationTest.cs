@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestaurantApplicationClassLibrary;
 using RestaurantApplicationClassLibrary.Helpers.Validation;
+using System.Collections.Generic;
 
 namespace RestaurantApplicationTests
 {
@@ -27,5 +28,21 @@ namespace RestaurantApplicationTests
             CustomerValidation validation = new CustomerValidation(mock.Object);
             Assert.AreEqual(0,validation.Validate()._errors.Count);
         }
+
+        [TestMethod]
+        public void TestCustomerShow()
+        {
+            List<Customer> customers = new List<Customer>()
+            {
+                new Customer("Juan Perez", "14584545"),
+                new Customer("Pedro Alvarez", "1010541"),
+            };
+            var mock = new Mock<InMemoryDataAccess<Customer>>();
+            CustomerRepository repository = new CustomerRepository(mock.Object);
+            repository.Save(customers[0]);
+            repository.Save(customers[1]);
+            Assert.AreEqual(customers, repository.GetAll());
+        }
     }
 }
+
